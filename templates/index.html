@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Gender Detector</title>
+</head>
+<body background="{{ url_for('static', filename='images/bgImg.jpeg') }}">
+    <div class="header">
+        <h1>
+            Gender Detector from Image
+        </h1>
+    </div>
+
+    <div class="content">
+        <h3 class="title">Insert An Image</h3>
+        <form action="/" id="uploadForm" method="post" enctype="multipart/form-data">
+            <div class="input-area">
+                <input type="file" id="fileInput" name="imageInput">
+                <label for="fileInput" style="background-image: url('{{uploadImg_url}}');"></label>
+                <p>Insert Image in <span style="font-weight: bold;">.jpg or .png</span> format with size no more than <span style="font-weight: bold;">10MB</span></p>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <h3 class="title">Output</h3>
+            {% if inputindicate == False %}
+                No output yet. Insert an image first.
+            {% else %}
+                <div class="input-img">
+                    <img src="{{ url_for('static', filename='input_output/outputImg.jpg') }}" alt="input" width="500">
+                </div>
+                <h3 class="title">Faces</h3>
+                    {% if nface == 0 %}
+                        No Faces Detected
+                    {% else %}
+                        {% for face in facepaths%}
+                            <div class="face">
+                                <img src="{{ face }}" alt="face">
+                                <div>
+                                    <h4>Face {{ loop.index }}</h4>
+                                    <p>Gender: <span>{{ gender_list[(loop.index-1)] }}</span></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+            {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body{
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+}
+h1{
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+.header{
+    margin: 200px auto;
+}
+.content{
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 25px;
+    max-height: 100%;
+    padding: 100px 200px;
+    opacity: 0.9;
+}
+.title{
+    color: #2E8A99;
+    font-size: 40px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.input-area{
+    width: 50%;
+    align-self: center;
+    background-color: #D8D8D8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.input-area p{
+    font-size: 20px;
+}
+.input-area input{
+    display: none;
+}
+.input-area label{
+    display: flex;
+    padding: 10px;
+    background-size: cover;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+}
+.submit-btn{
+    font-size: 15px;
+    font-weight: bold;
+    color: #2E8A99;
+    align-self: center;
+    background-color: transparent;
+    border: 3px solid #2E8A99;
+    border-radius: 7px;
+    padding: 10px;
+}
+.submit-btn:hover{
+    color: white;
+    background-color: #2E8A99;
+}
+.input-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-img img{
+    border-radius: 10px;
+}
+.face{
+    display: flex;
+    margin: 15px;
+    margin-bottom: 30px;
+}
+.face img{
+    border-radius: 50px;
+    margin-right: 30px;
+}
+.face div h4{
+    color: #2B3A55;
+    margin: 1px;
+}
+.face div p{
+    font-size: 20px;
+}
+.face div p span{
+    color: darkred;
+    font-weight: bold;
+}
